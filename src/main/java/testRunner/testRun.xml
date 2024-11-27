@@ -1,0 +1,14 @@
+<!--<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >-->
+<suite name="LetCode webpage testNG Automation">
+    <test name="Letcode web testing">
+    <classes>
+
+        <class name="PageObjects.Forms"></class>
+        <class name="PageObjects.Inputs"></class>
+        <class name="Hooks.Hooks"></class>
+        <!--<class name="PageObjects.Buttons"></class>-->
+
+
+    </classes>
+    </test>
+</suite>
