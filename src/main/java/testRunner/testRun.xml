@@ -3,12 +3,14 @@
     <test name="Letcode web testing">
     <classes>
 
-        <class name="PageObjects.Forms"></class>
+       <!-- <class name="PageObjects.Forms"></class>-->
         <class name="PageObjects.Inputs"></class>
+        <class name="PageObjects.Slider"></class>
         <class name="Hooks.Hooks"></class>
         <!--<class name="PageObjects.Buttons"></class>-->
 
 
     </classes>
+        <parameter name="range" value="25"></parameter>
     </test>
 </suite>

@@ -17,11 +17,11 @@ public class Hooks extends DriverUtilities {
     @BeforeSuite
     public  void beforesuite() throws IOException {
         setDriver("Chrome");
-        driver().get(config_File().getProperty("WebPageLink"));
+       /* driver().get(config_File().getProperty("WebPageLink"));
         driver().manage().window().maximize();
         PageFactory.initElements(driver(),this);
         coursePage.click();
-        coursePageURL=driver().getCurrentUrl();
+        coursePageURL=driver().getCurrentUrl();*/
     }
     @AfterSuite
     public void quitDriver() throws IOException {
@@ -41,7 +41,7 @@ public class Hooks extends DriverUtilities {
     @AfterClass
     @Test
     public void afterClass() throws IOException, InterruptedException {
-        driver().navigate().back();
+        //driver().navigate().back();
        /* PageFactory.initElements(driver(),this);
         waitFor(4000);
         driver().get(config_File().getProperty("WebPageLink"));

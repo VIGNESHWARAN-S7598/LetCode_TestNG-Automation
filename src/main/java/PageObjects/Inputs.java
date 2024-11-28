@@ -35,9 +35,9 @@ public class Inputs extends DriverUtilities {
             //setDriver("Chrome");
        PageFactory.initElements(driver(),this);
         implicitWait(15);
-        explicitWait(inputPageLink,7);
-        inputPageLink.click();
-            //openWebpage("Inputs");
+        /*explicitWait(inputPageLink,7);*/
+       // inputPageLink.click();
+            openWebpage("Inputs");
             maximizeWindow();
         }catch (Exception e){
             errorMessage=e.getMessage();
