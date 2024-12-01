@@ -1,5 +1,7 @@
 {
-  "Slider_Path": "D:\\Test Results\\Slider\\",
-  "Inputs_Path": "D:\\Test Results\\Inputs\\",
-  "Forms_Path": "D:\\Test Results\\Forms\\"
+  "Slider_Path": "C:\\Users\\svign\\IdeaProjects\\testNG_web_Automation\\src\\main\\resources\\Test_Results\\slider\\",
+  "Inputs_Path": "C:\\Users\\svign\\IdeaProjects\\testNG_web_Automation\\src\\main\\resources\\Test_Results\\Inputs\\",
+  "Forms_Path": "C:\\Users\\svign\\IdeaProjects\\testNG_web_Automation\\src\\main\\resources\\Test_Results\\Forms\\",
+  "Table_Path": "C:\\Users\\svign\\IdeaProjects\\testNG_web_Automation\\src\\main\\resources\\Test_Results\\Table\\",
+
 }

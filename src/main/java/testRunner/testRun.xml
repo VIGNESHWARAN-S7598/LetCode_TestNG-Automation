@@ -3,9 +3,10 @@
     <test name="Letcode web testing">
     <classes>
 
-        <class name="PageObjects.Forms"></class>
+<!--        <class name="PageObjects.Forms"></class>-->
         <class name="PageObjects.Inputs"></class>
-        <class name="PageObjects.Slider"></class>
+        <!--<class name="PageObjects.Slider"></class>-->
+        <class name="PageObjects.Table"></class>
         <class name="Hooks.Hooks"></class>
         <!--<class name="PageObjects.Buttons"></class>-->
 

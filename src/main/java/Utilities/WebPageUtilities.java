@@ -46,6 +46,9 @@ public class WebPageUtilities {
         if(key.equalsIgnoreCase("Slider")){
             driver().get(config_File().getProperty("Slider"));
         }
+        if(key.equalsIgnoreCase("table")){
+            driver().get(config_File().getProperty("Table_WebPage"));
+        }
 
     }
     public static void maximizeWindow() throws IOException {
