@@ -1,6 +1,8 @@
 package PageObjects;
 
 import Utilities.DriverUtilities;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -11,9 +13,10 @@ import java.io.IOException;
 import java.util.List;
 
 import static Utilities.ExcelUtilities.*;
+import static Utilities.FileUtilities.finishScreenshot;
+import static Utilities.FileUtilities.screenShot;
 import static Utilities.WaitUtilities.*;
-import static Utilities.WebPageUtilities.maximizeWindow;
-import static Utilities.WebPageUtilities.openWebpage;
+import static Utilities.WebPageUtilities.*;
 
 public class Forms extends DriverUtilities {
     @FindBy(linkText = "All in One")
@@ -59,24 +62,29 @@ public class Forms extends DriverUtilities {
         maximizeWindow();
     }
     @Test(priority = 7)
-    public void enteringDetails() throws IOException, InterruptedException {
+    public void enteringDetails() throws IOException, InterruptedException, ParseException, InvalidFormatException {
         PageFactory.initElements(driver(),this);
         setExcel(config_File().getProperty("Forms"));
         Select countryList=new Select(countries);
         for(int i=0;i<getData("FirstName").size();i++){
             firstNameInputField.sendKeys(getData("FirstName").get(i));
+            screenShot("Forms_Path","Entering the first name");
             waitFor(2000);
             lastNameInputField.sendKeys(getData("LastName").get(i));
+            screenShot("Forms_Path","Entering the last name");
             waitFor(2000);
             emailInputField.clear();
             emailInputField.sendKeys(getData("Email").get(i));
+            screenShot("Forms_Path","Entering the email");
             waitFor(2000);
             for(WebElement we:countryCodes){
                 if(we.getText().equalsIgnoreCase(getData("Country_Code").get(i))){
                     we.click();
                 }
             }
+            screenShot("Forms_Path","selecting the Country Code");
             phoneNoInputField.sendKeys(getData("Phone no").get(i));
+            screenShot("Forms_Path","Entering the Phone no");
             waitFor(2000);
             addressLine1InputField.sendKeys(getData("Address Line1").get(i));
             waitFor(2000);
@@ -88,18 +96,26 @@ public class Forms extends DriverUtilities {
             waitFor(2000);
             countryList.selectByVisibleText(getData("Country").get(i));
             waitFor(2000);
+            screenShot("Forms_Path","Entering the Address");
             DOBInputField.sendKeys(getData("DOB (DDMMYYYY)").get(i));
+            screenShot("Forms_Path","Entering the DOB");
             for(WebElement we:genders){
                 System.out.println(we.getText());
                 if(we.getText().equalsIgnoreCase(getData("Gender").get(i))){
                     we.click();
                 }
             }
+            screenShot("Forms_Path","Selecting the gender");
             termsAndConditions.click();
+            screenShot("Forms_Path","accepting the terms and conditions");
             waitFor(2000);
+            scrollBy(submitButton);
+            screenShot("Forms_Path","clicking the submit button");
             submitButton.click();
-
+            finishScreenshot();
         }
+
+
     }
 
 }

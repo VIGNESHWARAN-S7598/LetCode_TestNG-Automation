@@ -3,7 +3,7 @@
     <test name="Letcode web testing">
     <classes>
 
-       <!-- <class name="PageObjects.Forms"></class>-->
+        <class name="PageObjects.Forms"></class>
         <class name="PageObjects.Inputs"></class>
         <class name="PageObjects.Slider"></class>
         <class name="Hooks.Hooks"></class>
@@ -11,6 +11,6 @@
 
 
     </classes>
-        <parameter name="range" value="25"></parameter>
+        <parameter name="range" value="29"></parameter>
     </test>
 </suite>

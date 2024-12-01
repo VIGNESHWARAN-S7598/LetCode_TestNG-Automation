@@ -1,11 +1,15 @@
 package Utilities;
 
 
+import org.json.simple.*;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -17,6 +21,12 @@ public static String browser;
         FileInputStream fi=new FileInputStream("C:\\Users\\svign\\IdeaProjects\\testNG_web_Automation\\src\\main\\resources\\Config.properties");
         p.load(fi);
         return p;
+    }
+    public static JSONObject readJson() throws IOException, ParseException {
+        FileReader fr=new FileReader("C:\\Users\\svign\\IdeaProjects\\testNG_web_Automation\\src\\main\\resources\\OutPut_Files.json");
+        JSONParser jsp=new JSONParser();
+        Object obj=jsp.parse(fr);
+        return (JSONObject) obj;
     }
 public static String setDriver(String browser) throws IOException {
     System.out.println(config_File().getProperty("Chrome"));
