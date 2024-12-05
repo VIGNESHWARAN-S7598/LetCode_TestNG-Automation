@@ -10,9 +10,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.SortedSet;
 
 import static Utilities.ExcelUtilities.*;
 import static Utilities.FileUtilities.finishScreenshot;
@@ -46,6 +48,7 @@ public class Inputs extends DriverUtilities {
         }catch (Exception e){
             errorMessage=e.getMessage();
         }
+
         Assert.assertTrue(driver().getTitle().equalsIgnoreCase("Interact with Input fields"),errorMessage);
     }
     @Test(priority = 2,dependsOnMethods = "Inputs.openInputPage()")
