@@ -16,6 +16,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static Utilities.ActionUtilities.clickAndHold;
+import static Utilities.ExtentReportUtilities.*;
+import static Utilities.ExtentReportUtilities.reportScreenShot;
 import static Utilities.FileUtilities.finishScreenshot;
 import static Utilities.FileUtilities.screenShot;
 import static Utilities.WaitUtilities.waitFor;
@@ -58,19 +61,24 @@ public class Table extends DriverUtilities {
     public void verifyingTotalPrice() throws IOException, ParseException, InvalidFormatException {
         PageFactory.initElements(driver(),this);
         int sum=0;
-        Actions a=new Actions(driver());
-        a.clickAndHold(startOftheTable).moveToElement(totalPrice).release().build().perform();
+        clickAndHold(startOftheTable,totalPrice);
         screenShot("Table_Path","checking the prices of shopping table");
-        a.click(startOftheTable).build().perform();
         for(WebElement we:prices){
             sum+=Integer.parseInt(we.getText());
         }
+        createReport();
+
         if(sum==Integer.parseInt(totalPrice.getText())){
+            screenShot("Table_Path","Making Raj as present");
             System.out.println("total of all prices are matching");
+
+            reportTest("verifying that table is present").addScreenCaptureFromPath(reportScreenShot()).pass("total of all prices are matching");
         }
         else{
             System.out.println("total of all prices are not matching");
+            reportTest("verifying that table is present").fail("total of all prices are matching");
         }
+        finishReport();
 
     }
     @Test(priority = 3)
@@ -101,5 +109,7 @@ public class Table extends DriverUtilities {
             }
             listCount++;
         }
+
+
     }
 }

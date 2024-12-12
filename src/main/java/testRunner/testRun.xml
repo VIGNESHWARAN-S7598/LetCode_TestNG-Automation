@@ -6,13 +6,14 @@
         <class name="PageObjects.Forms"></class>
         <class name="PageObjects.Inputs"></class>
         <class name="PageObjects.Slider"></class>
+        <class name="PageObjects.Buttons"></class>
         <class name="PageObjects.Table"></class>
         <class name="Hooks.Hooks"></class>
-        <!--<class name="PageObjects.Buttons"></class>-->
+
 
 
     </classes>
-        <parameter name="range" value="29"></parameter>
-        <parameter name="lastName" value="Raj"></parameter>
+        <parameter name="range" value="29"></parameter>//--For Slider Class
+        <parameter name="lastName" value="Raj"></parameter>//--For Table class
     </test>
 </suite>

@@ -56,6 +56,6 @@ public class WebPageUtilities {
     }
     public static void scrollBy(WebElement we) throws IOException {
         JavascriptExecutor js=(JavascriptExecutor)driver();
-        js.executeScript("arguments[0].scrollIntoView(false);",we);
+        js.executeScript("arguments[0].scrollIntoView(true);",we);
     }
 }

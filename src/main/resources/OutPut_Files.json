@@ -3,5 +3,7 @@
   "Inputs_Path": "C:\\Users\\svign\\IdeaProjects\\testNG_web_Automation\\src\\main\\resources\\Test_Results\\Inputs\\",
   "Forms_Path": "C:\\Users\\svign\\IdeaProjects\\testNG_web_Automation\\src\\main\\resources\\Test_Results\\Forms\\",
   "Table_Path": "C:\\Users\\svign\\IdeaProjects\\testNG_web_Automation\\src\\main\\resources\\Test_Results\\Table\\",
+  "Buttons_Path": "C:\\Users\\svign\\IdeaProjects\\testNG_web_Automation\\src\\main\\resources\\Test_Results\\Buttons\\",
+  "Report_Path": "C:\\Users\\svign\\IdeaProjects\\testNG_web_Automation\\src\\main\\resources\\Reports\\"
 
 }

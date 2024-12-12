@@ -26,10 +26,14 @@ public class FileUtilities {
     public static File out;
     public static List<File> imgList=new ArrayList();
     public static List<String> cmntList=new ArrayList<>();
+    public static List<String> aadtnlcmntList;
     public static List<FileInputStream> ipStreamList=new ArrayList<>();
     public static FileInputStream fi;
     public static String currentDateTime;
     public static String path=null;
+    public static boolean needtoAddComment;
+    public static String screenShotComment;
+    public static int count;
 
     public static void screenShot(String filePath,String comment) throws IOException, InvalidFormatException, ParseException {
         int count=0;
@@ -45,6 +49,12 @@ public class FileUtilities {
         source.renameTo(destination);
         fi=new FileInputStream(destination);
         ipStreamList.add(fi);
+        aadtnlcmntList=new ArrayList<>(cmntList.size());
+    }
+    public static void addscreenShotComment(String comment){
+        aadtnlcmntList.add(comment);
+        //screenShotComment=comment;
+        needtoAddComment=true;
     }
     public static void finishScreenshot() throws IOException, ParseException, InvalidFormatException {
         document=new XWPFDocument();
@@ -62,5 +72,6 @@ public class FileUtilities {
         cmntList.clear();
         ipStreamList.clear();
         imgList.clear();
+
     }
 }

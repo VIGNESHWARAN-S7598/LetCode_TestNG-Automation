@@ -45,7 +45,6 @@ public class ExcelUtilities {
                 if(cell.getRowIndex()==0){
                     if (cell.getStringCellValue().equalsIgnoreCase(cellName)) {
                         cellNumber=cell.getColumnIndex();
-                        /*System.out.println("Cell Number: "+cellNumber);*/
                     }
                 }else{
                     if(cell.getColumnIndex()==cellNumber){
