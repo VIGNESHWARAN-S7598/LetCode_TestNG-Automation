@@ -12,8 +12,7 @@ import java.io.IOException;
 
 import static Utilities.ActionUtilities.action;
 import static Utilities.ActionUtilities.clickAndHold;
-import static Utilities.DriverUtilities.config_File;
-import static Utilities.DriverUtilities.driver;
+import static Utilities.DriverUtilities.*;
 import static Utilities.FileUtilities.*;
 import static Utilities.WaitUtilities.waitFor;
 import static Utilities.WebPageUtilities.scrollBy;
@@ -62,6 +61,7 @@ public class Buttons {
         addscreenShotComment("X Coordinate of a button : "+x);
         addscreenShotComment("Y Coordinate of a button : "+y);
         waitFor(3000);
+        clearFiles(readJson().get("Buttons_Path").toString());
     }
     @Test(priority = 4)
     public void colorOfButton() throws IOException, InterruptedException {

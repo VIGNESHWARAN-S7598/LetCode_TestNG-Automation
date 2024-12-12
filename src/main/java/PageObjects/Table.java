@@ -19,8 +19,7 @@ import java.util.stream.Collectors;
 import static Utilities.ActionUtilities.clickAndHold;
 import static Utilities.ExtentReportUtilities.*;
 import static Utilities.ExtentReportUtilities.reportScreenShot;
-import static Utilities.FileUtilities.finishScreenshot;
-import static Utilities.FileUtilities.screenShot;
+import static Utilities.FileUtilities.*;
 import static Utilities.WaitUtilities.waitFor;
 import static Utilities.WebPageUtilities.openWebpage;
 
@@ -109,6 +108,7 @@ public class Table extends DriverUtilities {
             }
             listCount++;
         }
+        clearFiles(readJson().get("Table_Path").toString());
 
 
     }

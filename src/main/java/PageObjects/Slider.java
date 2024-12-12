@@ -32,8 +32,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.logging.FileHandler;
 
-import static Utilities.FileUtilities.finishScreenshot;
-import static Utilities.FileUtilities.screenShot;
+import static Utilities.FileUtilities.*;
 import static Utilities.WaitUtilities.waitFor;
 import static Utilities.WebPageUtilities.*;
 
@@ -92,6 +91,8 @@ public class Slider extends DriverUtilities{
         if(range==countries.size()){
             System.out.println("countries are generated as per slider values");
         }
+        clearFiles(readJson().get("Slider_Path").toString());
+
         //finishScreenshot();
     }
 

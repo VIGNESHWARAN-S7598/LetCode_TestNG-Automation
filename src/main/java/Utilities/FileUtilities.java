@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -73,5 +74,13 @@ public class FileUtilities {
         ipStreamList.clear();
         imgList.clear();
 
+    }
+    public static void clearFiles(String filepath){
+        File f=new File(filepath);
+        File[] files=f.listFiles();
+        for(File fi:files){
+            System.out.println(fi.getName());
+            fi.delete();
+        }
     }
 }

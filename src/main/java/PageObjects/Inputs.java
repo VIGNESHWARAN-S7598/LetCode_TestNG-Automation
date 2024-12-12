@@ -17,8 +17,7 @@ import java.util.List;
 import java.util.SortedSet;
 
 import static Utilities.ExcelUtilities.*;
-import static Utilities.FileUtilities.finishScreenshot;
-import static Utilities.FileUtilities.screenShot;
+import static Utilities.FileUtilities.*;
 import static Utilities.WaitUtilities.*;
 import static Utilities.WebPageUtilities.*;
 
@@ -88,6 +87,7 @@ public class Inputs extends DriverUtilities {
         screenShot("Inputs_Path","cleared the text");
         waitFor(3000);
         finishScreenshot();
+        clearFiles(readJson().get("Inputs_Path").toString());
     }
 
 

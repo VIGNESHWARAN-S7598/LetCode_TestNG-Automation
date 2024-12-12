@@ -9,9 +9,6 @@
         <class name="PageObjects.Buttons"></class>
         <class name="PageObjects.Table"></class>
         <class name="Hooks.Hooks"></class>
-
-
-
     </classes>
         <parameter name="range" value="29"></parameter>//--For Slider Class
         <parameter name="lastName" value="Raj"></parameter>//--For Table class

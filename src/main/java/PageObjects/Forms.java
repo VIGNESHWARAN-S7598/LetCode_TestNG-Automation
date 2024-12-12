@@ -13,8 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 import static Utilities.ExcelUtilities.*;
-import static Utilities.FileUtilities.finishScreenshot;
-import static Utilities.FileUtilities.screenShot;
+import static Utilities.FileUtilities.*;
 import static Utilities.WaitUtilities.*;
 import static Utilities.WebPageUtilities.*;
 
@@ -113,8 +112,9 @@ public class Forms extends DriverUtilities {
             screenShot("Forms_Path","clicking the submit button");
             submitButton.click();
             finishScreenshot();
-        }
 
+        }
+        clearFiles(readJson().get("Forms_Path").toString());
 
     }
 
